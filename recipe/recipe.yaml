@@ -29,10 +29,12 @@ requirements:
     - python >=${{ python_min }}
     - eccodes >=2.41.0
     - netcdf4
+    - hdf5
     - h5py >=3.12.1
     - astropy-healpix
     - boto3
     - cartopy >=0.24.1
+    - cdo >=2.5.0,<2.6.1
     - cfgrib
     - dask
     - distributed
@@ -54,7 +56,7 @@ requirements:
     - ruamel.yaml
     - scipy
     - seaborn
-    - smmregrid >=0.1.4
+    - smmregrid ==0.1.6
     - typeguard
     - xarray >=2025.12.0
     - zarr >=3.0
