@@ -2,7 +2,6 @@ schema_version: 1
 
 context:
   version: "1.1.0"
-  python_min: "3.11"
 
 package:
   name: aqua-core
@@ -26,7 +25,7 @@ requirements:
     - pip
     - setuptools >=77.0.3
   run:
-    - python >=${{ python_min }},<3.15
+    - python <3.15
     - eccodes >=2.41.0
     - netcdf4
     - hdf5
