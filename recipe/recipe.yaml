@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "1.1.0"
+  version: "1.2.0"
 
 package:
   name: aqua-core
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/a/aqua-core/aqua_core-${{ version }}.tar.gz
-  sha256: db76d9cc57d543466345bcf8faad8702adad62daca8e07f61967a243371be223
+  sha256: 41e7973b94a65285ace3ebe72d6cdf4c2def523000744e589ccaea71200c0c3b
 
 build:
   number: 0
@@ -26,7 +26,8 @@ requirements:
     - setuptools >=77.0.3
   run:
     - python <3.15
-    - eccodes >=2.41.0
+    - eccodes >=2.41.0,<2.50
+    - python-eccodes >=2.41.0,<2.50
     - netcdf4
     - hdf5
     - h5py >=3.12.1
@@ -35,6 +36,7 @@ requirements:
     - cartopy >=0.24.1
     - cdo >=2.5.0,<2.6.1
     - cfgrib
+    - dask-core
     - dask
     - distributed
     - fastparquet
@@ -53,6 +55,7 @@ requirements:
     - pyyaml
     - regionmask
     - ruamel.yaml
+    - s3fs >=2026.1.0
     - scipy
     - seaborn
     - smmregrid ==0.1.6
@@ -63,7 +66,9 @@ tests:
   - python:
       imports:
         - aqua
-      pip_check: true
+      # pip check disabled: upstream requires "eccodeslib" (PyPI name), which is
+      # provided on conda-forge by the eccodes, ECMWF does not provide matching
+      pip_check: false
   - script:
       - aqua --help
 
