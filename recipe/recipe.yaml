@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "1.2.0"
+  version: "1.2.1"
 
 package:
   name: aqua-core
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/a/aqua-core/aqua_core-${{ version }}.tar.gz
-  sha256: 41e7973b94a65285ace3ebe72d6cdf4c2def523000744e589ccaea71200c0c3b
+  sha256: 71aa16b07a9bfa9dd8167f0205c4c037f074a9d089fbcfe21d73a6b8a94effd0
 
 build:
   number: 0
