@@ -13,7 +13,7 @@ source:
   sha256: 50b9189c362ef6dfcb84d22271978cc90f2058ea1965edb5df4aa9b72ff19e7d
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: python -m pip install . -vv --no-deps --no-build-isolation
   python:
@@ -30,13 +30,11 @@ requirements:
     - eccodes >=2.50.0,<2.51
     - python-eccodes >=2.50.0,<2.51
     - netcdf4
-    - hdf5
     - h5py >=3.12.1
     - astropy-healpix
     - boto3
     - cartopy >=0.24.1
     - cfgrib
-    - dask-core
     - dask
     - distributed
     - fastparquet
@@ -44,7 +42,6 @@ requirements:
     - gcsfs
     - icechunk
     - intake >=2.0.9
-    - intake-xarray >=2.0.0
     - jinja2
     - kerchunk
     - matplotlib-base
@@ -65,7 +62,7 @@ requirements:
 tests:
   - python:
       imports:
-        - aqua
+        - aqua.core
       python_version: ${{ python_min }}.*
   - script:
       - aqua --help
